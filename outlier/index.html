@@ -1462,4 +1462,38 @@ function fitBoard() {
 fitBoard();
 window.addEventListener("resize", fitBoard);
 </script>
+<script id="__mobile_bar__">
+(function(){
+  try {
+    var rules = ["3σ","肖维勒","格拉布斯"];
+    var hint = "点击下方按钮切换判据；上下拖动钢球请上滑到装置区";
+    var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+    var narrow = window.matchMedia('(max-width: 900px)').matches;
+    if (!(isTouch || narrow)) return;
+    var norm = function(s){ return (s || '').replace(/\s+/g, '').trim(); };
+    var btns = [].slice.call(document.querySelectorAll('button')).filter(function(b){
+      var t = norm(b.textContent);
+      return rules.some(function(r){ return new RegExp(r).test(t); });
+    });
+    if (!btns.length) return;
+    var bar = document.createElement('div');
+    bar.id = '__mbar';
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:2147483000;background:rgba(255,255,255,.98);border-top:1px solid #d8dee9;box-shadow:0 -8px 24px rgba(5,37,104,.10);padding:8px 10px calc(10px + env(safe-area-inset-bottom));font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;';
+    var t = document.createElement('div');
+    t.textContent = '操作面板 · ' + hint;
+    t.style.cssText = 'font-size:11.5px;color:#6b7688;margin:0 2px 7px;line-height:1.35;';
+    var row = document.createElement('div');
+    row.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;';
+    btns.forEach(function(b){
+      b.style.minHeight = '46px'; b.style.minWidth = '78px'; b.style.fontSize = '15px';
+      b.style.flex = '1 1 auto'; b.style.touchAction = 'manipulation';
+      row.appendChild(b);
+    });
+    bar.appendChild(t); bar.appendChild(row);
+    document.body.appendChild(bar);
+    var pad = function(){ document.body.style.paddingBottom = (bar.offsetHeight + 18) + 'px'; };
+    pad(); setTimeout(pad, 300); window.addEventListener('resize', pad);
+  } catch (e) {}
+})();
+</script>
 </body></html>
