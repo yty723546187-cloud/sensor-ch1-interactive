@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>传感器原理及应用 · 第一章 交互演示</title>
+<style>
+  :root{--blue:#002DBA;--navy:#052568;--wash:#E8EFF9;--ink:#1a1a1a;--muted:#6b7688;--line:#d8dee9}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.6}
+  header{padding:44px 24px 22px;border-bottom:1px solid var(--line)}
+  .wrap{max-width:980px;margin:0 auto}
+  .kicker{color:var(--blue);font-size:13px;letter-spacing:.08em;font-weight:600}
+  h1{margin:8px 0 6px;color:var(--navy);font-size:30px;letter-spacing:.01em}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  main{max-width:980px;margin:0 auto;padding:26px 24px 60px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  a.card{display:block;padding:20px 22px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:inherit;background:#fff;transition:border-color .15s,box-shadow .15s}
+  a.card:hover{border-color:var(--blue);box-shadow:0 6px 20px rgba(0,45,186,.08)}
+  .num{display:inline-block;background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:1px 7px;margin-bottom:10px}
+  .card h2{margin:0 0 6px;color:var(--navy);font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:13px}
+  footer{border-top:1px solid var(--line);padding:18px 24px;color:var(--muted);font-size:12px;text-align:center}
+</style></head>
+<body>
+<header><div class="wrap">
+  <div class="kicker">吉林大学 · 机械与航空航天工程学院</div>
+  <h1>传感器原理及应用 · 第一章 交互演示</h1>
+  <p>点击卡片打开可交互原理图（电脑可直接打开，手机可扫码）。</p>
+</div></header>
+<main><div class="grid">
+  <a class="card" href="galton/"><span class="num">01</span><h2>高尔顿钉板与随机误差</h2><p>投球观察随机落点与正态分布：n / x̄ / s、±σ 概率与二项/正态曲线。</p></a>
+  <a class="card" href="measurement-chain/"><span class="num">02</span><h2>测量系统构成链路</h2><p>被测对象→传感器→变送器→传输→处理→显示；可切换开环/闭环。</p></a>
+  <a class="card" href="null-measurement/"><span class="num">03</span><h2>零位式与微差式测量</h2><p>滑线电位差计：拖动滑触头找零位，比较偏差式/零位式/微差式误差。</p></a>
+  <a class="card" href="outlier/"><span class="num">04</span><h2>粗大误差判别</h2><p>拖动可疑值，切换 3σ / 肖维勒 / 格拉布斯准则，实时重算均值与标准差。</p></a>
+</div></main>
+<footer>吉林大学机械与航空航天工程学院 · 传感器原理及应用 · 第一章交互演示</footer>
+</body></html>
